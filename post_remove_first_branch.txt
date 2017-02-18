@@ -1,0 +1,44 @@
+Hi ,
+
+	For Apache 2.4.17 upgraded from Apache 2.4.12 in 8770.3.0.09.00.a onwards and 8770.2.6.07.07.c onwards. 
+
+As part of Apache upgrade (2.4.17), we have introduced the Microsoft Visual C++ 2015 Redistirbutable(x86). An installation of Microsoft Visual C++ 2015 Redistributable package (x86) have some pre-requisites which is differ based on the Windows operating system is mentioned as below,   
+
+1.	For Windows 2008, Windows 2008 R2, Windows 7 should have Service Pack 1(which included windows6.1-KB976932 update) 
+2.	For windows 8.1 and windows 2012 R2 operating system should have windows update(Windows8.1-KB2919442 and Windows8.1-KB2919355 based on the operating system architecture(x64 or x86))
+3.	For Windows 8 and Windows 2012 operating system have no need for windows updates as of now.
+
+Once we verified the above pre-requisites which are installed in windows operating system, then we can start to install Microsoft Visual C++ 2015 Redistributable package (x86) in the machine.
+
+
+Normal installation Behaviour of Microsoft Visual C++ 2015 Redistirbutable(x86):
+
+1.	For windows 8.1 and windows 2012 R2 operating system 
+
+Once the  Microsoft Visual C++ 2015 Redistributable package (x86) installation start, it  extract the package the cache location (C:\ProgramData\Package Cache\..). The cache location have 4 folders which is mentioned as below,
+
+C:\ProgramData\Package Cache\{74d0e5db-b326-4dae-a6b2-445b9de1836e} - VC_redist.x86.exe(Microsoft Visual C++ 2015 Redistirbutable(x86)) 
+C:\ProgramData\Package Cache\{A2563E55-3BEC-3828-8D67-E5E8B9E8B675}v14.0.23026\packages\vcRuntimeMinimum_x86 - vc_runtimeMinimum_x86.msi and cab1.cab
+C:\ProgramData\Package Cache\{BE960C1C-7BAD-3DE6-8B1A-2616FE532845}v14.0.23026\packages\vcRuntimeAdditional_x86 - vc_runtimeMinimum_x86.msi and cab1.cab
+C:\ProgramData\Package Cache\42D5BEC7DDFBD49E76467529CBC2868987BF8460\packages\Patch\x64 – Windows8.1-KB2999226-x64.msu
+		
+	       Microsoft Visual C++ 2015 Redistributable package (x86) triggered the package(C:\ProgramData\Package Cache\..) accordingly and installation gets complete. 
+	
+2.	For Windows 2008, Windows 2008 R2, Windows 7 operating system – instead of installing  this Windows8.1-KB2999226-x64.msu, Microsoft Visual C++ 2015 Redistirbutable(x86) have  this Windows6.1-KB2999226-x64.msu update. Remaining all same as the above mentioned process.
+
+
+The updates (Windows8.1-KB2999226-x64.msu or Windows6.1-KB2999226-x64.msu) are built-in component in Microsoft Visual C++ 2015 Redistirbutable(x86). 
+
+Issue occurred in machine :
+	
+	During installation of  Microsoft  Visual C++ 2015 Redistirbutable(x86),  failed to execute the update (Windows8.1-KB2999226-x64.msu or Windows6.1-KB2999226-x64.msu) in the windows operating system. But installation has shows as completed successfully. Due to that, Apache 2.4.17 service is not running in the windows operating system.
+
+Scenario :
+	   
+	Generally, Microsoft  Visual C++ 2015 Redistirbutable(x86) has not failed to execute the (Windows8.1-KB2999226-x64.msu or Windows6.1-KB2999226-x64.msu) in the windows operating system. Sometimes, the installation of Microsoft  Visual C++ 2015 Redistirbutable(x86) has failed to install the update (Windows8.1-KB2999226-x64.msu or Windows6.1-KB2999226-x64.msu). It failing randomly in the windows environment. This issue related to Microsoft  Visual C++ 2015 Redistirbutable(x86) package. How it may not install the update (Windows8.1-KB2999226-x64.msu or Windows6.1-KB2999226-x64.msu) to the machine ? we can’t predict it exactly.
+  
+	If it fails, we can download the update ((Windows8.1-KB2999226-x64.msu or Windows6.1-KB2999226-x64.msu)based on the windows operating system) and install it in the machine manually.
+
+
+Thanks & Regards,
+Nataraj Jayakumar 
